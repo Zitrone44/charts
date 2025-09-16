@@ -3,6 +3,16 @@ entries:
   postgres:
   - apiVersion: v2
     appVersion: "17.6"
+    created: "2025-09-16T10:31:48.096903728Z"
+    description: A Helm chart for Kubernetes
+    digest: cbc48892e965e5a165ef97eee08df487eabea0b82503c542659a5a71405f2ed0
+    name: postgres
+    type: application
+    urls:
+    - https://github.com/Zitrone44/charts/releases/download/postgres-0.1.1/postgres-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "17.6"
     created: "2025-09-16T08:07:59.917217749Z"
     description: A Helm chart for Kubernetes
     digest: 6d9564d19dd8514541078c51369b1692c44c9557c285fbead1e48f0cd904d261
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/Zitrone44/charts/releases/download/postgres-0.1.0/postgres-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-16T08:07:59.917222117Z"
+generated: "2025-09-16T10:31:48.096911723Z"
