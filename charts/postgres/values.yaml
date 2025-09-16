@@ -1,0 +1,11 @@
+nameOverride: "postgres"
+auth:
+  database: db
+  username: user
+  password: password  # CHANGE ME
+  postgresPassword: postgres  # CHANGE ME
+
+image:
+  image: docker.io/library/postgres
+  tag: 17.6-alpine
+  imagePullPolicy: IfNotPresent
