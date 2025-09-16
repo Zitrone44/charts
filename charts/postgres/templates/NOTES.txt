@@ -1,6 +1,10 @@
 1. Get the PostgreSQL password by running:
 
+<<<<<<< Updated upstream
    export POSTGRES_PASSWORD=$(kubectl get secret --namespace {{ .Release.Namespace }} {{ include "postgres.fullname" . }} -o jsonpath="{.data.postgres-password}" | base64 -d)
+=======
+   export POSTGRES_PASSWORD=$(kubectl get secret --namespace {{ .Release.Namespace }} {{ include "postgres.fullname" . }} -o jsonpath="{.data.password}" | base64 -d)
+>>>>>>> Stashed changes
 
 2. To connect to your database run the following command:
 

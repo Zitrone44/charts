@@ -27,12 +27,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ include "postgres.fullname" . }}
-              key: postgres-password
+              key: password
         - name: POSTGRES_POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ include "postgres.fullname" . }}
-              key: postgres-postgres-password
+              key: postgres-password
         ports:
         - name: postgres
           containerPort: 5432
