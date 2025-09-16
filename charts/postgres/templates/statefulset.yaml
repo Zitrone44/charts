@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: "{{ .Values.image.image }}:{{ .Values.image.tag }}"
+        image: {{ include "postgres.image" . | quote }}
         imagePullPolicy: {{ .Values.image.imagePullPolicy }}
         envFrom:
         - configMapRef:

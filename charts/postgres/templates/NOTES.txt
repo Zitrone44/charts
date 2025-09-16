@@ -4,10 +4,10 @@
 
 2. To connect to your database run the following command:
 
-   kubectl run {{ include "postgres.fullname" . }}-client --rm --tty -i --restart='Never' --namespace {{ .Release.Namespace }} --image {{ .Values.image.image }}:{{ .Values.image.tag }} --env="PGPASSWORD={{ .Values.auth.password }}" \
+   kubectl run {{ include "postgres.fullname" . }}-client --rm --tty -i --restart='Never' --namespace {{ .Release.Namespace }} --image {{ include "postgres.image" . }} --env="PGPASSWORD=$POSTGRES_PASSWORD" \
       --command -- psql --host {{ include "postgres.fullname" . }} -U {{ .Values.auth.username }} -d {{ .Values.auth.database }} -p 5432
 
 3. To connect from outside the cluster, run:
 
    kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ include "postgres.fullname" . }} 5432:5432 &
-   PGPASSWORD="{{ .Values.auth.password }}" psql --host 127.0.0.1 -U {{ .Values.auth.username }} -d {{ .Values.auth.database }} -p 5432
+   PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U {{ .Values.auth.username }} -d {{ .Values.auth.database }} -p 5432

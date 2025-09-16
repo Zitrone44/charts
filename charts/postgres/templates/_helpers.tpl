@@ -60,3 +60,21 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the image name with tag
+*/}}
+{{- define "postgres.image" -}}
+{{- printf "%s:%s" .Values.image.image (include "postgres.imageTag" .) }}
+{{- end }}
+
+{{/*
+Create the image tag
+*/}}
+{{- define "postgres.imageTag" -}}
+{{- if .Values.image.tagOverride }}
+{{- .Values.image.tagOverride }}
+{{- else }}
+{{- printf "%s-alpine" .Chart.AppVersion }}
+{{- end }}
+{{- end }}

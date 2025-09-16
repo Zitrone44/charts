@@ -7,5 +7,5 @@ auth:
 
 image:
   image: docker.io/library/postgres
-  tag: 17.6-alpine
   imagePullPolicy: IfNotPresent
+  tagOverride: ""  # Override the tag derived from appVersion
